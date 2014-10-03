@@ -591,6 +591,10 @@ for validation.
 
 
 %------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Smoothing}
+
+
 %------------------------------------------------
 \begin{frame}\frametitle{Good-Turing Smoothing Intuition}
 \begin{figure}
@@ -711,456 +715,424 @@ for validation.
 
 
 %------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{Leave One Out Intuition}
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
-\label{fig:good_turing_loo_intuition}
-\end{figure}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{Leave One Out Intuition}
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
-\label{fig:good_turing_loo_intuition}
-\end{figure}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{Leave One Out Intuition}
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
-\label{fig:good_turing_loo_intuition}
-\end{figure}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{Leave One Out Intuition}
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
-\label{fig:good_turing_loo_intuition}
-\end{figure}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{Leave One Out Intuition}
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
-\label{fig:good_turing_loo_intuition}
-\end{figure}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{Leave One Out Intuition}
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
-\label{fig:good_turing_loo_intuition}
-\end{figure}
-\end{frame}
-
-
-%------------------------------------------------
-
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Smoothing}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Interpolation \& Back-off}
+
+
+
+%------------------------------------------------
+\begin{frame}\frametitle{Interpolation \& Back-off}
+
+\begin{block}{Sparseness in a Trigram Model}
+
+\begin{enumerate}
+\item Back to bigrams, otherwise unigram: \alert{Back-off}
+\item Mix that model with bigram and unigram: \alert{Interpolation} 
+\end{enumerate}
+
+\end{block}
+
+
+\begin{block}{Context}
+\begin{enumerate}
+\item \alert{Back-off}: 
+some times it helps to use less
+context condition on less context for contexts
+you haven't learned much about.
+
+\item \alert{Interpolation}: 
+higher and lower order n-gram models have different strengths and weaknesses:
+\begin{itemize}
+\item high-order n-grams are sensitive to more context, but have sparse counts.
+\item low-order n-grams consider only very limited context, but have robust counts
+\end{itemize}
+\end{enumerate}
+
+\end{block}
+
+
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Interpola1on}
+
+\begin{block}{Simple interpolation}
+\vspace{-15pt}
+\begin{align*}
+\hat{P}(w_n|w_{n-1}w_{n-2})= & \lambda_1 P(w_n|w_{n-1}w_{n-2}) + \lambda_2 P(w_n|w_{n-1}) + \\
+& (1-\lambda_1 - \lambda_2) P(w_n) 
+\end{align*}
+\end{block}
+
+\begin{block}{Recursive Interpolation}
+Lambdas conditional on context:
+\vspace{-5pt}
+\begin{align*}
+\hat{P}(w_n|w_{n-1}w_{n-2})= & \lambda_1(w_{n-2}^{n-1}) P(w_n|w_{n-1}w_{n-2}) + \lambda_2(w_{n-2}^{n-1}) P(w_n|w_{n-1}) + \\
+& (1-\lambda_1(w_{n-2}^{n-1}) - \lambda_2(w_{n-2}^{n-1})) P(w_n) 
+\end{align*}
+\vspace{-10pt}
+{\footnotesize
+\begin{align*}
+\sum_{w\in V}\hat{P}(w_n|w_{n-1}w_{n-2})= &
+\lambda_1(w_{n-2}^{n-1}) \sum_{w\in V}  P(w_n|w_{n-1}w_{n-2}) + \lambda_2(w_{n-2}^{n-1})\sum_{w\in V}  P(w_n|w_{n-1}) + \\
+& (1-\lambda_1(w_{n-2}^{n-1}) -
+\lambda_2(w_{n-2}^{n-1})) \sum_{w\in V} P(w_n)\\
+& =  \lambda_1(w_{n-2}^{n-1}) + \lambda_2(w_{n-2}^{n-1}) + (1-\lambda_1(w_{n-2}^{n-1}) -
+\lambda_2(w_{n-2}^{n-1})) = 1
+\end{align*}
+}%
+\end{block}
+
+
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{N-gram Models}
+
+\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
+Language has long-distance dependencies:
+
+\begin{figure}
+\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
+\label{fig:long-distance-dependency}
+\end{figure}
+
+Or:  \\
+
+``The computer which I had just put into the machine room on the fifth
+floor crashed.'' 
+
+\end{block}
+\end{frame}
+
+
+%------------------------------------------------
+
+
+
 
 
 
