@@ -539,7 +539,36 @@ Language has long-distance dependencies:
 %------------------------------------------------
 \begin{frame}\frametitle{Held-out Estimation}
 
-{Deleted Estimation}
+\begin{block}{Long Tail of N-gram Counting}
+\begin{itemize}
+\item 1,266,566 bigrams in this corpus, more than
+half, 753,777, occur only once.
+\item Zipf's Law:  the frequency of any word is inversely proportional to its rank in the frequency table. 
+\end{itemize}
+
+If we observe an n-gram
+c times in the training corpus, ow often
+do we expect it to see in the future (Held-out Estimation)?
+
+$p_h(w_1w_2\ldots w_n) = \frac{E[r]}{N_h} \sim \frac{T_r}{N_r\times
+  N_h}$,
+$r = count_h(w_1w_2\ldots w_n)$
+\end{block}
+
+\begin{block}{Cross-Validation Estimation}
+$$E(r) = \frac{T_r^1+T_r^2}{N_r^1+N_r^2}$$
+\end{block}
+
+
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Deleted Estimation}
+
+Deleted Estimation: leave one part of the training corpus out
+for validation.
 
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
 \column{.5\textwidth} % Left column and width
@@ -563,47 +592,186 @@ Language has long-distance dependencies:
 
 %------------------------------------------------
 %------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
+\begin{frame}\frametitle{Good-Turing Smoothing Intuition}
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
+\includegraphics[width=1\linewidth]{figure/good_turing_smoothing.pdf}
+\label{fig:good_turing_smoothing}
 \end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
 \end{frame}
 
 
 %------------------------------------------------
 %------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
+\begin{frame}\frametitle{Good-Turing Smoothing Calculation}
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_calculation.pdf}
+\label{fig:good_turing_calculation}
 \end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
 \end{frame}
 
 
 %------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Leave One Out Intuition}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
+\label{fig:good_turing_loo_intuition}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Good-Turing for 2-Grams in Europarl}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_2gram.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (2)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_2.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (3)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_3.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (4)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_4.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (5)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_5.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (6)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_6.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (7)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_7.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (8)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_8.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Derivation of Good-Turing (9)}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_9.pdf}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Leave One Out Intuition}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
+\label{fig:good_turing_loo_intuition}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Leave One Out Intuition}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
+\label{fig:good_turing_loo_intuition}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Leave One Out Intuition}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
+\label{fig:good_turing_loo_intuition}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Leave One Out Intuition}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
+\label{fig:good_turing_loo_intuition}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Leave One Out Intuition}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
+\label{fig:good_turing_loo_intuition}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Leave One Out Intuition}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_loo_intuition.pdf}
+\label{fig:good_turing_loo_intuition}
+\end{figure}
+\end{frame}
+
+
+%------------------------------------------------
+
 %------------------------------------------------
 \begin{frame}\frametitle{N-gram Models}
 
