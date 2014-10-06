@@ -449,6 +449,50 @@ Sparse statistics, smoothing to generalize better.
 
 
 %------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Smoothing Methods}
+
+\begin{enumerate}
+\item Additive Smoothing:  Laplace (18th century) came up with this smoothing
+  technique when he tried to estimate the chance that the sun will
+  rise tomorrow (sunrise problem).  
+\item Good-Turing Estimate: Alan Turing and his assistant I. J. Good
+  (1953) as part of their efforts to crack German ciphers for the Enigma
+ machine during World War II. 
+% NLP professor Geoffrey Sampson (1995) implemented a simplified and
+% easier-to-use variant. 
+
+\item Jelinek-Mercer Smoothing (linear interpolation):  Previous IBM workers
+  (1980) Frederick Jelinek and Robert Mercer received ACL Lifetime
+  Achievement Award (The Dawn of Statistical ASR and MT) in June 2014.  
+
+\end{enumerate}
+
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Smoothing Methods}
+
+\begin{enumerate}
+\item Katz Smoothing (back-off):  Slava M. Katz (1987) proposed
+  non-linear estimation of probabilities from sparse data for the
+  language model component of a speech recogniser.  
+\item Witten-Bell Smoothing: Ian H. Witten and Timothy C. Bell (1991)
+  proposed estimating the probabilities of novel events in adaptive
+  text compression.  
+\item Kneser-Ney Smoothing:
+   Kneser and Ney (1995) proposed ``improved backing-off for m-gram language
+   modeling'',  evolved from absolute-discounting interpolation, which
+   is one of the best smoothing methods for n-gram language.  
+
+\end{enumerate}
+
+\end{frame}
+
+%------------------------------------------------
 %------------------------------------------------
 \begin{frame}\frametitle{Add-One Smoothing}
 
@@ -709,8 +753,14 @@ for validation.
 %------------------------------------------------
 \begin{frame}\frametitle{Derivation of Good-Turing (9)}
 \begin{figure}
-\includegraphics[width=0.9\linewidth]{figure/derivation_good_turing_9.pdf}
+\includegraphics[width=0.8\linewidth]{figure/derivation_good_turing_9.pdf}
 \end{figure}
+
+\begin{block}{Intuition}
+Good-Turing allows us to estimate the probability mass assigned to n-grams with lower counts by
+looking at the number of n-grams with higher counts.  
+\end{block}
+
 \end{frame}
 
 
@@ -758,8 +808,9 @@ higher and lower order n-gram models have different strengths and weaknesses:
 
 
 %------------------------------------------------
+
 %------------------------------------------------
-\begin{frame}\frametitle{Interpola1on}
+\begin{frame}\frametitle{Interpola1on (Jelinek-Mercer Smoothing)}
 
 \begin{block}{Simple interpolation}
 \vspace{-15pt}
@@ -794,27 +845,160 @@ Lambdas conditional on context:
 
 
 %------------------------------------------------
+
 %------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
+\begin{frame}\frametitle{How to Set the Lambdas?}
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
+\includegraphics[width=0.9\linewidth]{figure/lambda_set_interpolation.pdf}
 \end{figure}
 
-Or:  \\
+\begin{block}{Intuition}
+Jelinek and Mercer smoothing uses the lower order n-grams in combination with maximum
+likelihood estimation.
+\end{block}
 
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
+\end{frame}
+%------------------------------------------------
 
+%------------------------------------------------
+\begin{frame}\frametitle{Back-Off}
+
+\begin{block}{Prediction Model}
+Models are defined recursively in terms of lower order models.
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{figure/back_off.pdf}
+\end{figure}
+
+Discounting function: $d_n(w_{i-n+1}, \ldots, w_{i-1})$
+
+Back-off Weight: $\alpha_{w_{i-n+1} \cdots w_{i -1}}$
+\end{block}
+
+
+
+\end{frame}
+
+
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Katz Smoothing (Back-Off with Good-Turing)}
+Katz Adjusted Probability:
+\begin{block}{Discounting function}
+If Good-Turing smoothing adjusts C into $C^*$ and
+$ P (w_i | w_{i-n+1} \cdots w_{i-1}) =
+\frac{C(w_{i-n+1}...w_{i-1}w_{i})}{C(w_{i-n+1} \cdots w_{i-1})}$, 
+then $$d = \frac{C^*}{C}$$
+\end{block}
+
+
+\begin{block}{Back-off Weight}
+\vspace{-8pt}
+$$
+\beta_{w_{i-n+1} \cdots w_{i -1}} = 1 - \sum_{ \{w_i : C(w_{i-n+1}
+  \cdots w_{i}) > k \} } d_{w_{i-n+1} \cdots w_{i}}
+\frac{C(w_{i-n+1}...w_{i-1} w_{i})}{C(w_{i-n+1} \cdots w_{i-1})} 
+$$
+
+$$
+\alpha_{w_{i-n+1} \cdots w_{i -1}} = \frac{\beta_{w_{i-n+1} \cdots
+    w_{i -1}}}        {\sum_{ \{ w_i : C(w_{i-n+1} \cdots w_{i}) \leq
+    k \} } P_{bo}(w_i | w_{i-n+2} \cdots w_{i-1})}
+$$
+\end{block}
+
+\end{frame}
+
+
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Katz Adjusted Counts}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/katz_bigram.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Bigrams Katz Smoothing}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/katz_bigram_discounting.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Diversity of Predicted Words}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/predicted_words.pdf}
+\end{figure}
+\begin{block}{Witten-Bell}
+Think of unseen events as ones not having
+happened yet; The probability of this event, when it happens, can
+be modeled by the probability of seeing it for the
+first time.
+\end{block}
+\end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{First Time Words}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/witten_Bell_words.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{First Time Estimation}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/witten_Bell_smooth.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Witten-Bell Smoothing}
+
+\begin{block}{An Instance of Jelinek-Mercer Smoothing}
+Recursive interpolation method of using higher-order model.
+$$
+P^{WB}(w_i|w_{i-n+1}^{i-1}) =
+\lambda_{w_{i-n+1}^{i-1}}P(w_i|w_{i-n+1}^{i-1}) + (1-\lambda_{w_{i-n+1}^{i-1}})P^{WB}(w_i|w_{i-n+2}^{i-1})
+$$
+\vspace{-10pt}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/witten_bell_smoothing_equation.pdf}
+\end{figure}
 \end{block}
 \end{frame}
 
 
 %------------------------------------------------
+
+
+
+
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}\frametitle{Comparing to Good-Turing Smoothing}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/good_turing_witten_bell.pdf}
+\end{figure}
+\end{frame}
+
+% %------------------------------------------------
+% \begin{frame}\frametitle{Back-Off with Good-Turing Smoothing}
+% \begin{figure}
+% \includegraphics[width=0.9\linewidth]{figure/back_off_good_turing.pdf}
+% \end{figure}
+% \end{frame}
+
+
+% %------------------------------------------------
+
+%------------------------------------------------
+
+
+
 %------------------------------------------------
 \begin{frame}\frametitle{N-gram Models}
 
