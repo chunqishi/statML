@@ -97,6 +97,7 @@
 {
 Brandeis University \\ % Your institution for the title page
 \medskip
+%\textit{chunqi.shi@hotmail.com} % Your email address
 \textit{shicq@brandeis.edu} % Your email address
 }
 \date{\today} % Date, can be changed to a custom date
@@ -159,7 +160,7 @@ How language models work in a basic SMT architecture\footnote{http://slideplayer
 
 %------------------------------------------------
 
-\begin{frame} \frametitle{Open Source Language Models Example}
+\begin{frame}[label=go_architecture] \frametitle{Open Source Language Models Example}
 Architecture of the LIMSI SMT
 system\footnote{http://www.limsi.fr/tlp/mt/} and open language models:
 \begin{itemize}
@@ -173,6 +174,7 @@ system\footnote{http://www.limsi.fr/tlp/mt/} and open language models:
 \label{fig:TLP_SMT_arch}
 %\caption{}
 \end{figure}
+\hyperlink{go_nnlm}{\beamerbutton{NNLM}}
 \end{frame}
 
 %------------------------------------------------
@@ -1220,8 +1222,96 @@ on \alert{held-out} data can improve performance.
 \end{frame}
 %------------------------------------------------
 
+\section{Concept of Nenural Network Language Model}
+%------------------------------------------------
+\begin{frame}[label=go_nnlm]\frametitle{Statistical Language Models Based on \textbf{N}eural
+    \textbf{N}etworks}
+By Tomas Mikolov, Google (2012)
+\begin{block}{Motivation}
+A good model of language, meaningful sentences should be more likely
+than the ambiguous ones.
+\end{block}
+
+\begin{block}{Limitations of N-gram Models}
+\begin{itemize}
+\item Many histories $h$ are similar, but n-grams assume exact
+match of $h$.
+\item Practically, n-grams have problems with representing
+patterns over more than a few words
+\item With increasing order of the n-gram model, the number of
+possible parameters increases \alert{exponentially}
+\item There will be never enough of the training data to estimate
+parameters of high-order N-gram models
+\end{itemize}
+\end{block}
+\hyperlink{go_architecture}{\beamerbutton{Architecture}}
+\end{frame}
+%------------------------------------------------
 
 
+%------------------------------------------------
+\begin{frame}\frametitle{NN Based LM}
+
+\begin{itemize}
+\item The sparse history $h$ is projected into some continuous
+low-dimensional space, where similar histories get
+clustered
+\item Thanks to parameter sharing among similar histories, the
+model is more robust: less parameters have to be
+estimated from the training data
+\end{itemize}
+\end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Model Description - Feedforward NNLM}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figure/nnlm.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Model description - recurrent NNLM}
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{figure/rnnlm.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Model Description - Recurrent NNLM}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figure/rnnlm_description.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Part of Results}
+\begin{figure}
+\includegraphics[width=0.65\linewidth]{figure/nnlm_rst1.pdf}
+\end{figure}
+\vspace{-8pt}
+\begin{figure}
+\includegraphics[width=0.7\linewidth]{figure/nnlm_rst2.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{RNNLM Conclusion}
+\begin{block}{Beyond N-grams?}
+\begin{itemize}
+\item RNN LMs can generate much more meaningful text than
+n-gram models trained on the same data
+\item Many novel but meaningful sequences of words were
+generated
+\item RNN LMs are clearly better at modeling the language than
+n-grams
+\item However, many simple patterns in the language cannot be
+efficiently described even by RNNs...
+\end{itemize}
+\end{block}
+\end{frame}
+%------------------------------------------------
 
 
 
@@ -1395,6 +1485,9 @@ on \alert{held-out} data can improve performance.
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{End}
 
 %------------------------------------------------
 \begin{frame}\frametitle{Summary}
@@ -1402,9 +1495,9 @@ on \alert{held-out} data can improve performance.
 \begin{itemize}
 \item  Language models: How \alert{likely} is a string of English words
   good English? 
-\item  N-gram models: Markov assumption (useful but \alert{NOT} sufficient) 
-\item  Perplexity (Intrinsic Evaluation)
-\item  Count smoothing (Sparsity \& Large Space)
+\item  N-gram models: Markov assumption (useful but \alert{not} sufficient) 
+\item  Perplexity (intrinsic evaluation)
+\item  Count smoothing (sparsity \& large space)
 \begin{enumerate}
 \item  Lapalace (add-one, add-$\alpha$) [\alert{unseen words same
   probability}] 
@@ -1423,9 +1516,6 @@ on \alert{held-out} data can improve performance.
 \end{frame}
 %------------------------------------------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{End}
 %------------------------------------------------
 %------------------------------------------------
 \begin{frame} \frametitle{References}
