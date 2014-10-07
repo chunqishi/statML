@@ -435,6 +435,9 @@ Sparse statistics, smoothing to generalize better.
 
 
 %------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Smoothing}
+
 %------------------------------------------------
 \begin{frame}\frametitle{Smoothing}
 
@@ -635,8 +638,6 @@ for validation.
 
 
 %------------------------------------------------
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Smoothing}
 
 
 %------------------------------------------------
@@ -670,10 +671,11 @@ for validation.
 
 %------------------------------------------------
 %------------------------------------------------
-\begin{frame}\frametitle{Good-Turing for 2-Grams in Europarl}
+\begin{frame}[label=go_good_turing]\frametitle{Good-Turing for 2-Grams in Europarl}
 \begin{figure}
 \includegraphics[width=0.9\linewidth]{figure/good_turing_2gram.pdf}
 \end{figure}
+\hyperlink{go_absolute_discounting}{\beamergotobutton{approximation}}.
 \end{frame}
 
 
@@ -971,11 +973,20 @@ $$
 
 
 %------------------------------------------------
+%------------------------------------------------
+\begin{frame}\frametitle{Witten-Bell Smoothing Example}
 
-
+\begin{block}{}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/witten_bell_exam.pdf}
+\end{figure}
+\end{block}
+\end{frame}
 
 
 %------------------------------------------------
+
+
 
 
 %------------------------------------------------
@@ -984,6 +995,7 @@ $$
 \includegraphics[width=0.9\linewidth]{figure/good_turing_witten_bell.pdf}
 \end{figure}
 \end{frame}
+%------------------------------------------------
 
 % %------------------------------------------------
 % \begin{frame}\frametitle{Back-Off with Good-Turing Smoothing}
@@ -997,334 +1009,216 @@ $$
 
 %------------------------------------------------
 
+%------------------------------------------------
+
+\begin{frame}\frametitle{Diversity of History}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/diversity_history.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+
+\begin{frame}\frametitle{Kneser-Ney Smoothing}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/kneser_ney_continuation.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
 
 
 %------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
+\begin{frame}[label=go_absolute_discounting]\frametitle{Absolute Discounting Interpolation}
+Good Turing Smoothing is used in Katz smoothing. If we look into 
+it, might save some time by calculating. 
+\hyperlink{go_good_turing}{\beamergotobutton{Good Turing}}
 
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
+%\begin{block}{}
+Chen and Goodman suggested absolute discounting. 
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
+\includegraphics[width=1\linewidth]{figure/absolute_discounting.pdf}
 \end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
+%\end{block}
 \end{frame}
 
 
 %------------------------------------------------
 %------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
 
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
+\begin{frame}\frametitle{Parameters of Absolute Discounting}
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
+\includegraphics[width=0.9\linewidth]{figure/absolute_discounting_para.pdf}
+\end{figure}
+\end{frame}
+%------------------------------------------------
+
+
+
+%------------------------------------------------
+\begin{frame}\frametitle{Kneser-Ney Smoothing}
+%\begin{block}{}
+\vspace{-3pt}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/modified_kneser_ney.pdf}
+\end{figure}
+\vspace{-7pt}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/modified_kneser_ney_low_order.pdf}
 \end{figure}
 
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
+%\end{block}
 \end{frame}
 
 
 %------------------------------------------------
 %------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
+\begin{frame}\frametitle{Lower Order Formula for $\gamma(d)$}
+%\begin{block}{}
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
+\includegraphics[width=1\linewidth]{figure/modified_kneser_ney_high_order.pdf}
 \end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
+%\end{block}
 \end{frame}
+%------------------------------------------------
 
 
 %------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
+\begin{frame}\frametitle{Interpolated Back-off}
+%\begin{block}{}
 \begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
+\includegraphics[width=1\linewidth]{figure/interpolated_back_off.pdf}
 \end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
+%\end{block}
 \end{frame}
-
+%------------------------------------------------
 
 %------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
+\begin{frame}\frametitle{Interpolation \& Back-off}
 
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
+\begin{itemize}
+\item Both interpolation (Jelinek-Mercer) and backoff (Katz) involve combining
+information from \alert{higher- and lower-order} models.
+\item Key difference: in determining the probability of n-grams with \alert{nonzero}
+counts, interpolated models use information from lower-order models
+while backoff models do not.
+\item In both backoff and interpolated models, lower-order models are
+used in determining the probability of n-grams with \alert{zero counts
+(sparsity)}.
+\item It turns out that it's \alert{not hard} to create a backoff version of an
+interpolated algorithm, and vice-versa. (Kneser-Ney was originally
+backoff; Chen \& Goodman made interpolated version.)
+\end{itemize}
 \end{frame}
+%------------------------------------------------
 
 
 %------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
+\begin{frame}\frametitle{Summary of Smoothing}
+By Chen \& Goodman (1998)
+\begin{itemize}
+\item  The factor with the largest influence is the use of a modified backoff
+distribution as in \alert{Kneser-Ney smoothing}.
+\item  Jelinek-Mercer performs better on small training sets; Katz performs
+better on large training sets.
+\item  Katz smoothing performs well on n-grams with large counts; Kneser-
+Ney is best for small counts.
+\item  \alert{Absolute discounting} is superior to linear discounting.
+\item  Interpolated models are superior to backoff models for low (nonzero)
+counts.
+\item  Adding free parameters to an algorithm and optimizing these parameters
+on \alert{held-out} data can improve performance.
+\end{itemize}
 \end{frame}
-
-
 %------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-%------------------------------------------------
-\begin{frame}\frametitle{N-gram Models}
-
-\begin{block}{Is Markov assumption sufficient? \alert{NO!}}
-Language has long-distance dependencies:
-
-\begin{figure}
-\includegraphics[width=0.6\linewidth]{figure/long-distance-dependency.png}
-\label{fig:long-distance-dependency}
-\end{figure}
-
-Or:  \\
-
-``The computer which I had just put into the machine room on the fifth
-floor crashed.'' 
-
-\end{block}
-\end{frame}
-
-
-%------------------------------------------------
-
-
-
-
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Size of Language Models}
 
+%------------------------------------------------
+\begin{frame}\frametitle{Evaluation}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/evaluation.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
 
+
+%------------------------------------------------
+\begin{frame}\frametitle{Managing the Size of the Model}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figure/size_of_model.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}\frametitle{Number of Unique N-Grams}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{figure/number_of_ngram.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}\frametitle{Estimation on Disk}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=0.9\linewidth]{figure/estimiation_on_disk.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
+
+
+%------------------------------------------------
+\begin{frame}\frametitle{Efficient Data Structures}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/efficient_data_structure.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Fewer Bits to Store Probabilities}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/store_probabilities.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Reducing Vocabulary Size}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/vocabulary_size.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
+
+%------------------------------------------------
+\begin{frame}\frametitle{Filtering Irrelevant N-Grams}
+%\begin{block}{}
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/filter_ngram.pdf}
+\end{figure}
+%\end{block}
+\end{frame}
+%------------------------------------------------
 
 
 
@@ -1499,16 +1393,55 @@ floor crashed.''
 
 
 
-\begin{frame} \frametitle{References}
-Many slides are from:
+
+
+
+%------------------------------------------------
+\begin{frame}\frametitle{Summary}
+
 \begin{itemize}
-\item StatML book's Web site \&
-\item Dan Jurafsky's
-``Language Modeling: Introduction to N-grams''. 
+\item  Language models: How \alert{likely} is a string of English words
+  good English? 
+\item  N-gram models: Markov assumption (useful but \alert{NOT} sufficient) 
+\item  Perplexity (Intrinsic Evaluation)
+\item  Count smoothing (Sparsity \& Large Space)
+\begin{enumerate}
+\item  Lapalace (add-one, add-$\alpha$) [\alert{unseen words same
+  probability}] 
+\item  Deleted (held-out) estimation [\alert{things-we-saw-once}]
+\item  Good Turing [\alert{things new}, assuming leave-one-out]
+\item  Back-off (Katz) smoothing [\alert{non-linear} zero-count]
+\item  Interpolation (Jelinek-Mercer) smoothing [\alert{linear} zero-count]
+\item  Witten-Bell [interpolation, \alert{diversity} of predicted word]
+\item  Absolute discounting [\alert{approximating} Good-Turing]
+\item  Kneser-Ney [back-off, \alert{diversity} of history]
+\item  Modified Kneser-Ney [\alert{interpolated back-off}]
+\end{enumerate}
+\item  Managing the size of the model
 \end{itemize}
 
 \end{frame}
+%------------------------------------------------
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{End}
+%------------------------------------------------
+%------------------------------------------------
+\begin{frame} \frametitle{References}
+Many slides are from:
+\begin{itemize}
+\item The \alert{StatML} book's Web site \&
+\item \alert{Dan Jurafsky}'s
+``Language Modeling: Introduction to N-grams''. \&
+\item \alert{Bill MacCartney}'s ``NLP Lunch Tutorial: Smoothing''
+\end{itemize}
+\begin{center}
+\Huge\alert {Thank You!}
+\end{center}
+
+\end{frame}
+%------------------------------------------------
 %------------------------------------------------
 \begin{frame}
 \Huge{\centerline{The End}}
